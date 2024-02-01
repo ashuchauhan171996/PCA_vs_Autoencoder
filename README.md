@@ -2,6 +2,28 @@
 Implementation and comparison between PCA and the autoencoder (AE) to a collection of handwritten digit images from the USPS dataset using PyTorch.
 
 # Introduction
+
+Principal Component Analysis (PCA) and autoencoders are both techniques used in dimensionality reduction and feature extraction, but they achieve these goals through different mechanisms and have different applications:
+
+## Principal Component Analysis (PCA):
+
+* PCA is a statistical method used for dimensionality reduction. It works by finding the principal components, which are the orthogonal axes that capture the maximum variance in the data.
+* PCA transforms the original high-dimensional data into a new set of orthogonal variables called principal components.
+* The principal components are ordered in terms of the amount of variance they explain in the data, with the first principal component explaining the most variance, the second explaining the second most, and so on.
+* PCA does not involve any specific neural network architecture and is purely a mathematical/statistical technique.
+* PCA is a linear method, meaning it captures linear relationships between variables.
+* It is commonly used for data visualization, noise reduction, and speeding up learning algorithms by reducing the dimensionality of the feature space.
+
+## Autoencoder:
+
+* An autoencoder is a type of neural network architecture used for unsupervised learning. It consists of an encoder and a decoder network.
+* The encoder network compresses the input data into a lower-dimensional representation, typically called a "latent space" or "encoding."
+* The decoder network then attempts to reconstruct the original input data from the compressed representation.
+* Autoencoders are trained to minimize the reconstruction error, encouraging them to learn a compact representation of the input data in the latent space.
+* Unlike PCA, autoencoders are nonlinear models and can capture complex relationships in the data.
+* Autoencoders can learn hierarchical representations, making them powerful tools for feature learning and extraction in tasks such as image denoising, dimensionality reduction, and anomaly detection.
+* Variants of autoencoders, such as denoising autoencoders, variational autoencoders (VAEs), and convolutional autoencoders, have been developed to address specific challenges and improve performance in various domains.
+
 In this assignment, I applied PCA and the autoencoder (AE) to a collection of handwritten digit images from the USPS dataset. The data file is stored in the "/data" folder as "\USPS.mat". The whole dataset is loaded and stored in the matrix A with shape 3000x256. Each row of matrix A represents a 16x16 handwritten digit image (between 0 and 9), which is 
 flattened to a 256-dimensional vector.
 
